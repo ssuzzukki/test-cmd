@@ -49,11 +49,13 @@ var updateCmd = &cobra.Command{
 	Use:   "update",
 	Short: "Update this command",
 	Run: func(cmd *cobra.Command, args []string) {
+		current := version.Version
 		app_ver, err := getLatestVersion()
 		if err != nil {
 			fmt.Println(err)
 			return
 		}
+		fmt.Println("current version : v" + current)
 		fmt.Println("latest version : " + app_ver)
 	},
 }
