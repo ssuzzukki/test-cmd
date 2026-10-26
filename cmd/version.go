@@ -8,16 +8,15 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
+	"github.com/ssuzzukki/test-cmd/internal/version"
 )
-
-const Version = "0.0.1"
 
 // versionCmd represents the version command
 var versionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "Show application version",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(Version)
+		fmt.Println(version.Version)
 	},
 }
 
